@@ -43,5 +43,6 @@ function addTestimonial() {
   
 
 
+
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll(); // Jalankan sekali di awal
