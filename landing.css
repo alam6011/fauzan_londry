@@ -9,6 +9,189 @@ body {
     scroll-behavior: smooth;
   }
   
+
+/* Mobile menu hidden */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    position: fixed;
+    top: 60px;
+    right: 0;                /* tempel ke kanan */
+    width: 100%;             /* ambil penuh lebar layar */
+    max-width: 220px;        /* tapi dibatasi biar nggak terlalu lebar */
+    background: #2196F3;
+    flex-direction: column;
+    padding: 15px;
+    gap: 10px;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);  /* awalnya tersembunyi */
+  }
+
+  .navbar .nav-links.active {
+    transform: translateX(0); /* muncul mulus dari kanan */
+  }
+
+  .navbar .nav-links li a {
+    padding: 10px;
+    display: block;
+    text-align: left;  /* biar rapi ke kiri */
+  }
+}
+
+
+
+/* ===== Hero Fullscreen for Desktop ===== */
+.hero-fullscreen {
+  background: linear-gradient(180deg, #0366d6 0%, #0047b3 100%); /* gradasi biru */
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  /* default height for small screens (so it doesn't force full-screen on mobile) */
+  min-height: 60vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-fullscreen .hero-content {
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* ===== Hero Fullscreen for All Devices ===== */
+.hero-fullscreen {
+  background: linear-gradient(180deg, #0366d6 0%, #0047b3 100%); /* gradasi biru */
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  min-height: 100vh;   /* FULL SCREEN untuk semua device */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-fullscreen .hero-content {
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* Big headline */
+.hero-fullscreen h1 {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(36px, 8vw, 96px);
+  line-height: 1;
+  letter-spacing: 1px;
+  text-transform: none;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* subtitle */
+.hero-fullscreen .subtitle {
+  margin-top: 16px;
+  margin-bottom: 22px;
+  font-size: clamp(14px, 2.2vw, 20px);
+  color: rgba(255,255,255,0.95);
+}
+
+/* primary button */
+.hero-fullscreen .btn-primary {
+  display: inline-block;
+  background: #fff;
+  color: #0047b3;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.hero-fullscreen .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.20);
+}
+
+/* Small tweak for very small devices */
+@media (max-width: 420px) {
+  .hero-fullscreen {
+    padding: 30px 14px;
+  }
+  .hero-fullscreen .btn-primary {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
+
+/* Big headline */
+.hero-fullscreen h1 {
+  margin: 0;
+  font-weight: 800;
+  /* scalable size: besar di desktop, lebih kecil di mobile */
+  font-size: clamp(36px, 8vw, 96px);
+  line-height: 1;
+  letter-spacing: 1px;
+  text-transform: none;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* subtitle */
+.hero-fullscreen .subtitle {
+  margin-top: 16px;
+  margin-bottom: 22px;
+  font-size: clamp(14px, 2.2vw, 20px);
+  color: rgba(255,255,255,0.95);
+}
+
+
+
+
+/* primary button */
+.hero-fullscreen .btn-primary {
+  display: inline-block;
+  background: #fff;
+  color: #0047b3;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.hero-fullscreen .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.20);
+}
+
+/* MAKE IT FULLSCREEN ON DESKTOP */
+@media (min-width: 992px) {
+  .hero-fullscreen {
+    min-height: 100vh; /* full viewport height on desktop */
+    padding: 0;        /* center perfectly */
+  }
+
+  /* a little tighter line-height for very large screens */
+  .hero-fullscreen h1 {
+    line-height: 0.95;
+  }
+}
+
+/* Small tweak for very small devices */
+@media (max-width: 420px) {
+  .hero-fullscreen {
+    padding: 30px 14px;
+  }
+  .hero-fullscreen .btn-primary {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
+
+
   /* Hero */
   header {
     background: #4f46e5;
